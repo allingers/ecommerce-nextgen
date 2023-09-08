@@ -5,7 +5,7 @@ const Menu: React.FC <{}> = () => {
 
     return (
         <nav className="navbar"> 
-            <div className="logoContainer">
+            <div className="logo">
                 <h2 className="logo">Next<span>Gen</span></h2>
             </div>
             <ul className="menulinks">
