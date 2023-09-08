@@ -1,9 +1,9 @@
 const express = require('express');
 const cors = require('cors');
-const dotenv = require('dotenv');
-const productRouter = require('./productRouter');
+dotenv = require('dotenv').config(); 
+const productRoutes = require('./productRoutes');
 
-dotenv.config(); 
+
 
 const app = express();
 const CLIENT_URL = "http://localhost:5173";
@@ -17,7 +17,7 @@ app.use(cors({
 );
 
 //Routes
-app.use("/api/products", productRouter);
+app.use(productRoutes);
 
 
 // app.post("/create-checkout-session", async (req, res) => {
