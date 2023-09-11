@@ -1,1 +1,17 @@
-GET http://localhost:3000/api/products
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "name": "Ditt Namn",
+  "email": "din@email.com",
+  "password": "DittLosenord"
+}
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "din@email.com",
+  "password": "DittLosenord"
+}

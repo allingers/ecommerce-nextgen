@@ -1,4 +1,3 @@
-// controllers/productController.js
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 async function getFormattedProducts(req, res) {
@@ -27,4 +26,5 @@ async function getFormattedProducts(req, res) {
 }
 
 module.exports = { getFormattedProducts }
+  
   

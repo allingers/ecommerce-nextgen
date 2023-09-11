@@ -1,0 +1,42 @@
+[
+  {
+    "id": "en-unik-id",
+    "email": "anvandare@example.com",
+    "hashedPassword": "hashat-lösenord-här"
+  },
+  {
+    "id": "f75c66b4-a1ce-43df-aec6-49085f9d5a29",
+    "email": "johndoe@example.com",
+    "hashedPassword": "$2b$10$Cuv9vhVLsv1zaqHe7uJ8l.DW6lXrVqFtrJL9WQnBeSkgl1jl8LAxq"
+  },
+  {
+    "id": "bc5517f7-1daf-42e4-9d36-ab640bd163e7",
+    "email": "test@testing.com",
+    "hashedPassword": "$2b$10$Xnk5QoaLfGhab8nMdijhY.kwzKRCjhF1vdUVRkv71UHU6Xe3JXkjq"
+  },
+  {
+    "id": "02b9dc9c-5eab-46cb-adab-28b20435eb52",
+    "email": "test@testing.se",
+    "hashedPassword": "$2b$10$0MmDr9jYNt/pAvlOJN1SQODs.1loUL0ukphtxwn8qcQICzs9XaMe."
+  },
+  {
+    "id": "a80434d6-9d6b-429f-9f9f-dc812fd22c8e",
+    "email": "din@email.com",
+    "hashedPassword": "$2b$10$9JFke2vRJ83NHtemAW5Duu0apHTfHnZe2TueQTBh6y9Wt8wg9ca2u"
+  },
+  {
+    "id": "2ba1c3e3-88b2-4582-b452-b0bcfc0b1b9e",
+    "email": "pelle@hotmail.com",
+    "hashedPassword": "$2b$10$gBz8RBfyaOLSAPEukylFVetlLp67l4QmpCfysbuUnNy4bbbgNI9Ky"
+  },
+  {
+    "id": "6429c830-1ba8-4c52-b540-78d5ebbd419e",
+    "email": "kalle@hotmail.com",
+    "hashedPassword": "$2b$10$vmn.O7wScY1P2Z3mT07hxOAa2DCwYKhFuhVGSvIKsDxmLab7muc7q"
+  },
+  {
+    "id": "b15fd48c-f07e-4441-80cc-1e2427a4645b",
+    "email": "admin@admin.se",
+    "hashedPassword": "$2b$10$l9ROXKEUxMMc3nRFatAD6u9NmoRKcOAtFO0zH6S6lrBNOBssrbTSS"
+  }
+]

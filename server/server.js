@@ -1,13 +1,18 @@
 const express = require('express');
 const cors = require('cors');
 dotenv = require('dotenv').config(); 
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
 const productRoutes = require('./productRoutes');
-
-
+const authRoutes = require('./authRoutes'); 
+const authController = require('./controllers/authController'); 
+const loginRoutes = require('./loginRoutes');
 
 const app = express();
 const CLIENT_URL = "http://localhost:5173";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
+const secretKey = process.env.SECRET_KEY;
 
 //middleware 
 app.use(express.json());
@@ -16,8 +21,20 @@ app.use(cors({
 })
 );
 
+app.use(cookieParser());
+app.use(
+  session({
+    secret: process.env.MY_SECRET_KEY,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
 //Routes
 app.use(productRoutes);
+app.use('/auth', authRoutes);
+app.use('/auth', loginRoutes);
+
 
 
 // app.post("/create-checkout-session", async (req, res) => {
