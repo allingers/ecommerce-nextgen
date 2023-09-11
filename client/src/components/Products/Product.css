@@ -40,12 +40,13 @@
   }
 
   .buyButton button{
-    background-color: #81af7b; /* Bakgrundsfärg */
-    color: #ffffffe0; /* Textfärg */
+    background-color: #9dbb9aab; /* Bakgrundsfärg */
+    color: #302f2fe0; /* Textfärg */
     border: none; /* Ta bort kantlinjen */
-    padding: 10px 20px; /* Justera önskat padding (topp och botten, vänster och höger) */
+    padding: 8px 18px; /* Justera önskat padding (topp och botten, vänster och höger) */
     font-size: 14px; /* Justera önskad textstorlek för knappen */
     cursor: pointer; /* Visa en handpekare vid hovring */
+    border-radius: 3px;
     transition: background-color 0.3s ease; 
   }
 

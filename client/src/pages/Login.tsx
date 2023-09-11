@@ -1,14 +1,41 @@
 import  { useState } from 'react';
 import "./Login.css"
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
   
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
       e.preventDefault();
-      // Implementera din inloggningslogik här
+    
+      try {
+        const response = await fetch('http://localhost:3000/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password }),
+        });
+    
+        if (response.ok) {
+          console.log("LYCKAD INLOGGNING")
+          navigate('/')
+
+          // Inloggningen lyckades
+          // Du kan utföra ytterligare åtgärder här, som att lagra användarens session
+          // eller omdirigera användaren till en annan sida
+        } else {
+          // Inloggningen misslyckades, visa felmeddelande för användaren
+          const data = await response.json();
+          alert(data.error);
+        }
+      } catch (error) {
+        console.error('Inloggningsfel:', error);
+      }
     };
   
 
