@@ -1,9 +1,11 @@
 
-  .product-list {
+
+.product-list {
     display: flex;
     flex-wrap: wrap; 
     margin: 7rem 10rem;
     justify-content:center;
+
   }
 
   .card {
