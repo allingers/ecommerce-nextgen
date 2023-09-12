@@ -1,6 +1,5 @@
 // I en separat fil, t.ex. productTypes.ts
 export interface Product {
-    product: any;
     id: string;
     name: string;
     price: number;

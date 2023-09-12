@@ -8,11 +8,11 @@ const productRoutes = require('./productRoutes');
 const authRoutes = require('./authRoutes'); 
 const authController = require('./controllers/authController'); 
 const loginRoutes = require('./loginRoutes');
+const checkoutRoutes = require('./checkoutRoutes');
 
 const app = express();
-const CLIENT_URL = "http://localhost:5173";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
-const secretKey = process.env.SECRET_KEY;
+const secretKey = process.env.MY_SECRET_KEY;
 
 //middleware 
 app.use(express.json());
@@ -34,6 +34,7 @@ app.use(
 app.use(productRoutes);
 app.use('/auth', authRoutes);
 app.use('/auth', loginRoutes);
+app.use('/checkout', checkoutRoutes);
 
 
 

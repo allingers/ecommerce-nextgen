@@ -1,0 +1,55 @@
+/* CSS för att styla varukorgen */
+.cart {
+    padding: 20px;
+  }
+  
+  .cart h2 {
+    font-size: 23px;
+    margin-bottom: 10px;
+  }
+  
+  .cart ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .cart li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .cartitem-price{
+    font-weight: bold;
+  }
+  
+  .cart .product-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .cart img {
+    max-width: 50px;
+    max-height: 50px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .cart button {
+    background-color: #ef4a3fd2;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 1rem;
+  }
+
+  .cart-view{
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Anpassa stilar efter dina önskemål */
+  
