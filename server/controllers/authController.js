@@ -62,7 +62,6 @@ const loginUser = async (req, res) => {
     }
 
     req.session.userId = user.id;
-    req.session.email = user.email;
 
     // Skicka användarinformation till klienten
     return res.status(200).json({user: user});

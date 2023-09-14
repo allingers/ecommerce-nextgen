@@ -29,7 +29,7 @@ const Login: React.FC<LoginProps> = () => {
         login(email, password);
 
         // Navigera användaren till startsidan eller annan lämplig plats
-        navigate('/');
+        navigate('/min-sida');
       } else {
         // Inloggningen misslyckades, visa felmeddelande för användaren
         const data = await response.json();

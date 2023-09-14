@@ -1,4 +1,6 @@
 /* Login.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -11,11 +13,13 @@
     align-items: center;
     padding: 20px;
     margin-top: 5rem;
+    font-family: 'Poppins', sans-serif;
   }
   
   h2 {
     font-size: 24px;
     margin-bottom: 20px;
+    font-weight: 500;
   }
   
   .login-form {

@@ -73,7 +73,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       const user = JSON.parse(storedUserData);
       setAuthStatus({ isLoggedIn: true, user, login, logout });
     } else {
-      console.log('Ingen sparad användarinformation hittades');
       setAuthStatus({ isLoggedIn: false, user: null, login, logout });
     }
   }, []);

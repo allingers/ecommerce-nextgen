@@ -3,7 +3,6 @@ import LoginMessage from '../Messages/LoginMessage';
 import { useAuth } from '../../context/AuthContext'; 
 import { useCart } from '../../context/CartContext';
 
-
 import '../Cart/Cart.css';
 
 interface CartProps {
@@ -23,13 +22,14 @@ const Cart: React.FC<CartProps> = ({ removeFromCart }) => {
     }
 
     try {
+      const customerData = localStorage.getItem('userData')
       // Skicka en förfrågan till backend för att skapa en Checkout-session
       const response = await fetch('http://localhost:3000/checkout/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(cart),
+        body: JSON.stringify({ cart, customerData:customerData }),
       });
 
       if (!response.ok) {
@@ -85,42 +85,6 @@ const Cart: React.FC<CartProps> = ({ removeFromCart }) => {
 export default Cart;
 
 
-
-
-
-
-
-// import React from 'react';
-// import { Product } from '../../Intefaces/productTypes';
-// import "../Cart/Cart.css"
-
-// interface CartProps {
-//   cart: Product[]; // Uppdatera attributnamnet till 'cart'
-//   removeFromCart: (productId: string) => void;
-// }
-
-// const Cart: React.FC<CartProps> = ({ cart, removeFromCart }) => {
-//   return (
-//     <div className="cart">
-//       <h2>Varukorg</h2>
-//       <ul>
-//         {cart.map((item) => (
-//           <li key={item.id}>
-//             <div className="product-info">
-//               <img src={item.image} alt={`Bild på ${item.name}`} />
-//               <span>{item.name}</span>
-//               <span className='cartitem-price'>{item.price.toLocaleString('sv-SE', { style: 'currency', currency: 'SEK' })}</span>
-//             </div>
-//             <button onClick={() => removeFromCart(item.id)}>Ta bort</button>
-//           </li>
-//         ))}
-//       </ul>
-//       {/* ... */}
-//     </div>
-//   );
-// };
-
-// export default Cart;
 
 
 
