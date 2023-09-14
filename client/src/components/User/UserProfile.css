@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+.user-profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.user-profile button{
+    background-color: #B6A5BE;
+    color: #fff;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1rem
+}
+
+.user-profile button:hover{
+    background-color: #C9BAD1;
+}
+.user-profile h2{
+    font-weight: 550;
+    font-size: 25px;
+}

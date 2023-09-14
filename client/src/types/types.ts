@@ -2,7 +2,10 @@
 export interface Product {
     id: string;
     name: string;
-    price: number;
+    price: string;
+    defaultPrice:number;
     image: string;
-    quantity: number; // Lägg till quantity som en valfri egenskap
+    quantity: number; 
   }
+
+  

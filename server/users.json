@@ -38,5 +38,11 @@
     "id": "b15fd48c-f07e-4441-80cc-1e2427a4645b",
     "email": "admin@admin.se",
     "hashedPassword": "$2b$10$l9ROXKEUxMMc3nRFatAD6u9NmoRKcOAtFO0zH6S6lrBNOBssrbTSS"
+  },
+  {
+    "id": "df8d901a-b728-405f-bc3b-24136ec669b1",
+    "name": "NewUser",
+    "email": "newUser@test.com",
+    "hashedPassword": "$2b$10$xk4Lum1d1xVjWV1CiIm9IeEs/XC14lQ2u72tT/XOwy0YNR8eyEtmu"
   }
 ]

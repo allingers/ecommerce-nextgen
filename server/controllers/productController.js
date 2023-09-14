@@ -11,10 +11,11 @@ async function getFormattedProducts(req, res) {
     const formattedProducts = products.data.map((price) => {
       const product = price.product;
       return {
-        id: product.id,
+        id: product.price,
         name: product.name,
         image: product.images[0] || null,
-        price: price.unit_amount / 100,
+        price: product.default_price,
+       defaultPrice: price.unit_amount / 100,
       };
     });
 

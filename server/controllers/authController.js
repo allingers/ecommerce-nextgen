@@ -29,6 +29,7 @@ const registerUser = async (req, res) => {
     // Skapa en ny användare
     const newUser = {
       id: uuidv4(),
+      name,
       email,
       hashedPassword,
     };
@@ -46,34 +47,49 @@ const registerUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
-    try {
-      const { email, password } = req.body;
-  
-      // Hitta användaren i listan med användare
-      const user = users.find((u) => u.email === email);
-  
-      if (!user) {
-        return res.status(401).json({ error: 'Felaktig e-post eller lösenord.' });
-      }
-  
-      // Jämför lösenordet med den hashade versionen
-      const isPasswordValid = await bcrypt.compare(password, user.hashedPassword);
-  
-      if (!isPasswordValid) {
-        return res.status(401).json({ error: 'Felaktig e-post eller lösenord.' });
-      }
-  
-      // Sätt en cookie med användarens ID (om du vill använda sessioner)
-      req.session.userId = user.id;
-  
-      // Skicka en bekräftelse till klienten
-      return res.status(200).json({ message: 'Inloggningen var framgångsrik.' });
-    } catch (error) {
-      console.error(error);
-      return res.status(500).json({ error: 'Inloggningen misslyckades.' });
+  try {
+    const { email, password } = req.body;
+
+    // Hitta användaren i listan med användare
+    const user = users.find((u) => u.email === email);
+    if (!user) {
+      return res.status(401).json({ error: 'Felaktig e-post eller lösenord.' });
     }
-  };
+    // Jämför lösenordet med den hashade versionen
+    const isPasswordValid = await bcrypt.compare(password, user.hashedPassword);
+    if (!isPasswordValid) {
+      return res.status(401).json({ error: 'Felaktig e-post eller lösenord.' });
+    }
+
+    req.session.userId = user.id;
+    req.session.email = user.email;
+
+    // Skicka användarinformation till klienten
+    return res.status(200).json({user: user});
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Inloggningen misslyckades.' });
+  }
+};
+
+const logoutUser = (req, res) => {
+  try {
+    // Rensa användarens session
+    req.session.destroy((err) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).json({ error: 'Utloggning misslyckades.' });
+      }
+      // Skicka en bekräftelse till klienten
+      console.log("utloggad")
+      return res.status(200).json({ message: 'Utloggning lyckades.' });
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Utloggning misslyckades.' });
+  }
+};
   
 module.exports = {
-  registerUser, loginUser
+  registerUser, loginUser, logoutUser,
 };

@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 import "./Menu.css"
 
 const Menu: React.FC <{}> = () => {
+    const { isLoggedIn } = useAuth();
 
     return (
         <nav className="navbar"> 
@@ -12,9 +14,15 @@ const Menu: React.FC <{}> = () => {
                 <li>
                     <NavLink to="/">Hem</NavLink>
                 </li>
-                <li>
-                    <NavLink to="/login">Logga in</NavLink>
-                </li>
+                {isLoggedIn ? ( // Visa "Min sida" om användaren är inloggad
+          <li>
+            <NavLink to="/min-sida">Min sida</NavLink>
+          </li>
+        ) : (
+          <li>
+            <NavLink to="/login">Logga in</NavLink>
+          </li>
+        )}
                 <li>
                 {/* <ShoppingCartOutlined /> */}
                     <NavLink to="/varukorg">Varukorg</NavLink>

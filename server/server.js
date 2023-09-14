@@ -7,7 +7,6 @@ const cookieParser = require('cookie-parser');
 const productRoutes = require('./productRoutes');
 const authRoutes = require('./authRoutes'); 
 const authController = require('./controllers/authController'); 
-const loginRoutes = require('./loginRoutes');
 const checkoutRoutes = require('./checkoutRoutes');
 
 const app = express();
@@ -24,7 +23,7 @@ app.use(cors({
 app.use(cookieParser());
 app.use(
   session({
-    secret: process.env.MY_SECRET_KEY,
+    secret: secretKey,
     resave: false,
     saveUninitialized: false,
   })
@@ -32,32 +31,11 @@ app.use(
 
 //Routes
 app.use(productRoutes);
-app.use('/auth', authRoutes);
-app.use('/auth', loginRoutes);
+app.use('/auth', authRoutes.registrationRoute); // För registrering
+app.use('/auth', authRoutes.loginRoute); // För inloggning
+app.use('/auth', authRoutes.logoutRoute); // För utloggning
 app.use('/checkout', checkoutRoutes);
 
-
-
-// app.post("/create-checkout-session", async (req, res) => {
-//   try {
-//     const session = await stripe.checkout.sessions.create({
-//       line_items: req.body.map((item) => {
-//         return {
-//           price: item.product,
-//           quantity: item.quantity,
-//         };
-//       }),
-//       mode: "payment",
-//       success_url: `${CLIENT_URL}/confirmation`,
-//       cancel_url: CLIENT_URL,
-//     });
-
-//     res.status(200).json({ url: session.url });
-//   } catch (error) {
-//     console.log(error.message);
-//     res.status(400).json("Det gick inte bra...");
-//   }
-// });
 
 
 const port = process.env.PORT || 3000;

@@ -1,11 +1,16 @@
 /* CSS för att styla varukorgen */
 .cart {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .cart h2 {
     font-size: 23px;
     margin-bottom: 10px;
+    text-align: center;
+    margin-bottom: 2rem;
   }
   
   .cart ul {
@@ -39,8 +44,9 @@
   .cart button {
     background-color: #ef4a3fd2;
     color: white;
+    font-size: 12px;
     border: none;
-    padding: 5px 10px;
+    padding: 4px 8px;
     border-radius: 4px;
     cursor: pointer;
     margin-left: 1rem;
@@ -50,6 +56,33 @@
     padding: 20px;
     background-color: #f9f9f9;
   }
+
+  .checkoutBtn {
+    display: flex;
+    justify-content: center;
+  }
   
-  /* Anpassa stilar efter dina önskemål */
+.checkoutBtn button{
+  margin-top: 2rem;
+  background-color: #96a997ee;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 6px 13px;
+  font-size: 13px;
+  
+}
+
+.checkoutBtn button:hover{
+  background-color: #c1ccc2ee;
+}
+
+
+.empty-cart-txt{
+  text-align: center;
+}
+
+.loginMessage-container{
+  margin-top: 2rem;
+  
+}
   

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
-import { Product } from '../../Intefaces/productTypes';
+import { Product } from '../../types/types';
 import { useCart } from '../../context/CartContext';
 
 const ProductList = () => {
@@ -18,7 +18,7 @@ const ProductList = () => {
     <div className="product-list">
       {products.map((product) => (
         <ProductCard
-          key={product.id}
+          key={product.price}
           product={product} // Skicka hela produktobjektet som en egenskap
           addToCart={addToCart}
         />
