@@ -1,57 +1,72 @@
 
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 .product-list {
-    display: flex;
-    flex-wrap: wrap; 
-    margin: 7rem 10rem;
-    justify-content:center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px; 
+  margin: 2rem auto; 
+  padding: 25px; 
+  font-family: 'Poppins', sans-serif;
+}
 
-  }
+.card {
+  width: calc(25% - 20px); 
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 20px; 
+}
 
-  .card {
-    width: calc(25% - 20px);
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-between;
-  }
-  
-  .card img {
-    width: auto;
-    height: 80%;
-  }
-  
-  .card h3 {
-    font-size: 18px;
-    margin-top: 10px;
+.card img {
+  width: auto;
+  max-height: 340px; 
+  object-fit:fill; 
+  transition: transform 0.3s ease;
+}
 
-  }
-  
-  .card p.price {
-    font-weight: bold;
-    margin-top: 10px;
-    color: rgb(128, 128, 128);
-  } 
+.productInformation{
+ margin-top: .5rem;
+}
+
+.card img:hover {
+  transform: scale(1.008);
+}
+
+.card h3 {
+  font-size: 15px;
+  font-weight: 500;
+  padding-top: .5rem;
+}
+
+.card p.price {
+  font-weight: 600;
+  margin-top: 10px;
+  color: #888;
+  font-size: 14px;
+}
 
 .buyButton {
-    margin-top: 1rem;
+  margin-top: .8rem;
+}
 
-  }
+.buyButton button {
+  background-color: #9dbb9aab;
+  color: #302f2fe0;
+  border: none;
+  padding: 8px 15px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
 
-  .buyButton button{
-    background-color: #9dbb9aab; /* Bakgrundsfärg */
-    color: #302f2fe0; /* Textfärg */
-    border: none; /* Ta bort kantlinjen */
-    padding: 8px 18px; /* Justera önskat padding (topp och botten, vänster och höger) */
-    font-size: 14px; /* Justera önskad textstorlek för knappen */
-    cursor: pointer; /* Visa en handpekare vid hovring */
-    border-radius: 3px;
-    transition: background-color 0.3s ease; 
-  }
-
-  .buyButton button:hover{
-    background-color: #a3dc9b;
-  }
+.card button:hover {
+  background-color: #d3dccfdb;
+  color:  #5d625bd3;
+}
