@@ -10,7 +10,7 @@ const UserProfile: React.FC = () => {
     
     const handleLogout = async () => {
       try {
-        const response = await fetch('http://localhost:3000/auth/logout', {
+        const response = await fetch('http://localhost:3000/api/logout', {
           method: 'POST',
         });
     

@@ -24,7 +24,7 @@ const Cart: React.FC<CartProps> = ({ removeFromCart }) => {
     try {
       const customerData = localStorage.getItem('userData')
       // Skicka en förfrågan till backend för att skapa en Checkout-session
-      const response = await fetch('http://localhost:3000/checkout/create-checkout-session', {
+      const response = await fetch('http://localhost:3000/api/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,7 +37,8 @@ const Cart: React.FC<CartProps> = ({ removeFromCart }) => {
         return;
       }
 
-      const { url } = await response.json();
+      const { url, sessionId } = await response.json();
+      localStorage.setItem('sessionId', sessionId)
 
       // Omdirigera användaren till Stripe Checkout
       window.location.href = url;

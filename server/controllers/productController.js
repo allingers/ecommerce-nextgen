@@ -15,7 +15,7 @@ async function getFormattedProducts(req, res) {
         name: product.name,
         image: product.images[0] || null,
         price: product.default_price,
-       defaultPrice: price.unit_amount / 100,
+        defaultPrice: price.unit_amount / 100,
       };
     });
 

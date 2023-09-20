@@ -2,25 +2,21 @@ const express = require('express');
 const cors = require('cors');
 dotenv = require('dotenv').config(); 
 const session = require('express-session');
-const cookieParser = require('cookie-parser');
-
-const productRoutes = require('./productRoutes');
-const authRoutes = require('./authRoutes'); 
-const authController = require('./controllers/authController'); 
-const checkoutRoutes = require('./checkoutRoutes');
-
-const app = express();
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
 const secretKey = process.env.MY_SECRET_KEY;
+const app = express();
 
-//middleware 
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
+
+
+// Middleware
 app.use(express.json());
 app.use(cors({
-    origin: "*", 
-})
-);
+  origin: '*', // Uppdatera med din frontend-adress
+  credentials: true, // Tillåt credentials (t.ex. cookies)
+}));
 
-app.use(cookieParser());
 app.use(
   session({
     secret: secretKey,
@@ -29,12 +25,25 @@ app.use(
   })
 );
 
+// controllers
+const loginController = require('./controllers/loginController'); 
+const logoutController = require('./controllers/logoutController');
+const registerController = require('./controllers/registerController'); 
+const checkoutController = require ('./controllers/checkoutController');
+const orderController = require ('./controllers/orderController');
+const productRoutes = require('./productRoutes');
+
+
 //Routes
 app.use(productRoutes);
-app.use('/auth', authRoutes.registrationRoute); // För registrering
-app.use('/auth', authRoutes.loginRoute); // För inloggning
-app.use('/auth', authRoutes.logoutRoute); // För utloggning
-app.use('/checkout', checkoutRoutes);
+app.use('/api', loginController); //login
+app.use('/api', logoutController); //logout
+app.use('/api', registerController); //register
+app.use('/api', checkoutController ); //checkout
+app.use('/api', orderController);
+
+
+
 
 
 

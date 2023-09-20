@@ -20,7 +20,7 @@ const Register = () => {
 
     // Skicka användaruppgifterna till din backend för registrering
     try {
-        const response = await fetch('http://localhost:3000/auth/register', {
+        const response = await fetch('http://localhost:3000/api/register', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

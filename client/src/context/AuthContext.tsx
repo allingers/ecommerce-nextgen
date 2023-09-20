@@ -29,7 +29,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const login = async (email: string, password: string) => {
     try {
-      const response = await fetch('http://localhost:3000/auth/login', {
+      const response = await fetch('http://localhost:3000/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -44,8 +44,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
         setAuthStatus({ isLoggedIn: true, user: userData, login, logout });
       } else {
-        const data = await response.json();
-        alert(data.error);
+        const data = await response.text(); // Hämta textsvaret
+        alert(data); // Visa textsvaret som ett felmeddelande
       }
     } catch (error) {
       console.error('Inloggningsfel:', error);
@@ -61,7 +61,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   useEffect(() => {
     const storedUserCookie = document.cookie
       .split('; ')
-      .find((cookie) => cookie.startsWith('user='));
+      .find((cookie) => cookie.startsWith('authCookie'));
 
     const storedUserData = localStorage.getItem('userData');
 

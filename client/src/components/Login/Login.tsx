@@ -1,6 +1,6 @@
 import React, { useState, FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext'; // Uppdatera sökvägen
+import { useAuth } from '../../context/AuthContext'; // Uppdatera sökvägen
 import "./Login.css"
 
 interface LoginProps {}
@@ -13,30 +13,26 @@ const Login: React.FC<LoginProps> = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
+  
     try {
-      const response = await fetch('http://localhost:3000/auth/login', {
+      const response = await fetch('http://localhost:3000/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email, password }),
       });
-
+  
       if (response.ok) {
-        // Inloggningen lyckades
-        // Anropa login-funktionen från AuthContext för att uppdatera användarstatusen
         login(email, password);
-
-        // Navigera användaren till startsidan eller annan lämplig plats
         navigate('/min-sida');
       } else {
-        // Inloggningen misslyckades, visa felmeddelande för användaren
-        const data = await response.json();
-        alert(data.error);
+        const data = await response.text(); 
+        alert(data);
       }
     } catch (error) {
       console.error('Inloggningsfel:', error);
+      alert('Ett fel uppstod vid inloggning.');
     }
   };
 
