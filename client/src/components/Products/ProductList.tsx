@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import { Product } from '../../types/types';
 import { useCart } from '../../context/CartContext';
 
-const ProductList = () => {
+const ProductList: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const { addToCart } = useCart();
 
@@ -18,8 +18,8 @@ const ProductList = () => {
     <div className="product-list">
       {products.map((product) => (
         <ProductCard
-          key={product.price}
-          product={product} // Skicka hela produktobjektet som en egenskap
+          key={product.id} // Assuming product.id is the unique identifier
+          product={product}
           addToCart={addToCart}
         />
       ))}

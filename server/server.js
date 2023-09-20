@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 dotenv = require('dotenv').config(); 
 const session = require('express-session');
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const secretKey = process.env.MY_SECRET_KEY;
 const app = express();
 
@@ -31,20 +32,18 @@ const logoutController = require('./controllers/logoutController');
 const registerController = require('./controllers/registerController'); 
 const checkoutController = require ('./controllers/checkoutController');
 const orderController = require ('./controllers/orderController');
-const productRoutes = require('./productRoutes');
+const productController = require('./controllers/productController');
+const stripeController = require('./controllers/stripeController')
 
 
 //Routes
-app.use(productRoutes);
+app.use('/api', productController);
 app.use('/api', loginController); //login
 app.use('/api', logoutController); //logout
 app.use('/api', registerController); //register
 app.use('/api', checkoutController ); //checkout
 app.use('/api', orderController);
-
-
-
-
+app.use('/api', stripeController)
 
 
 const port = process.env.PORT || 3000;

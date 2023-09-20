@@ -1,29 +1,88 @@
+/* UserProfile.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-.user-profile{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5rem;
-    font-family: 'Poppins', sans-serif;
-
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  font-family: 'Poppins', sans-serif;
 }
 
-.user-profile button{
-    background-color: #B6A5BE;
-    color: #fff;
-    padding: 7px 15px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+.user-profile button {
+  background-color: #B6A5BE;
+  color: #fff;
+  padding: 7px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.user-profile button:hover {
+  background-color: #C9BAD1;
+}
+
+.user-profile h2 {
+  font-weight: 550;
+  font-size: 25px;
+}
+
+
+.order-history {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem 0rem .5rem 0rem; /* Minskat mellanrum genom att ändra margin */
+    background-color: #f2f2f2a4;
+    box-shadow: 0 0 10px rgba(157, 157, 157, 0.264);
+    border-radius: 5px;
+    padding: 1.2rem;
+  }
+  
+  .order-history > h2 {
+    font-size: 1.5rem;
     font-weight: bold;
-    margin-top: 1rem
-}
+    margin-bottom: 0rem;
 
-.user-profile button:hover{
-    background-color: #C9BAD1;
-}
-.user-profile h2{
-    font-weight: 550;
-    font-size: 25px;
-}
+  }
+  
+  .order-history ul {
+    list-style: none;
+    margin: .5rem;
+  }
+  
+  .order-history li {
+    width: 100%;
+    box-shadow: 0 0 10px rgba(157, 157, 157, 0.068);
+    border-radius: 5px;
+    padding: 1rem;
+    margin: .8rem 0;
+    background-color: #fff;
+  }
+  
+  .order-history h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .order-history p {
+    font-size: .8rem;
+    margin: 0;
+  }
+  
+  .order-history .product-name {
+    font-size: .8rem;
+    font-weight: bold;
+    flex-basis: 50%;
+  }
+  
+  .order-history .order-totalPrice {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: .5rem;
+    text-align: right;
+  }
+  

@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import LoginMessage from '../Messages/LoginMessage';
 import { useAuth } from '../../context/AuthContext'; 
 import { useCart } from '../../context/CartContext';
+import { Product } from '../../types/types';
 
 import '../Cart/Cart.css';
 
 interface CartProps {
+  cart: Product[]; 
   removeFromCart: (productId: string) => void;
 }
 
@@ -16,21 +18,22 @@ const Cart: React.FC<CartProps> = ({ removeFromCart }) => {
   const isCartEmpty = cart.length === 0;
 
   const handleStripeCheckout = async () => {
+    // Visa meddelandet om användaren inte är inloggad
     if (!isLoggedIn) {
-      setShowLoginMessage(true); // Visa meddelandet om användaren inte är inloggad
+      setShowLoginMessage(true); 
       return;
     }
 
     try {
       const customerData = localStorage.getItem('userData')
-      // Skicka en förfrågan till backend för att skapa en Checkout-session
       const response = await fetch('http://localhost:3000/api/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ cart, customerData:customerData }),
+        body: JSON.stringify({ cart, customerData: customerData }),
       });
+
 
       if (!response.ok) {
         console.error('Det gick inte att skapa en Checkout-session.');
@@ -40,7 +43,6 @@ const Cart: React.FC<CartProps> = ({ removeFromCart }) => {
       const { url, sessionId } = await response.json();
       localStorage.setItem('sessionId', sessionId)
 
-      // Omdirigera användaren till Stripe Checkout
       window.location.href = url;
     } catch (error) {
       console.error('Ett fel uppstod vid hantering av Stripe Checkout:', error);
@@ -55,12 +57,13 @@ const Cart: React.FC<CartProps> = ({ removeFromCart }) => {
       ) : (
         <ul>
           {cart.map((item) => (
-            <li key={item.price}>
+            <li key={item.id}>
               <div className="product-info">
+              <span>{item.quantity}x</span>
                 <img src={item.image} alt={`Bild på ${item.name}`} />
                 <span>{item.name}</span>
                 <span className="cartitem-price">
-                  {item.defaultPrice.toLocaleString('sv-SE', { style: 'currency', currency: 'SEK' })}
+                  {item.price * item.quantity} SEK
                 </span>
               </div>
               <button onClick={() => removeFromCart(item.id)}>Ta bort</button>

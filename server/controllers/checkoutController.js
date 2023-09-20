@@ -11,13 +11,13 @@ router.post('/create-checkout-session', async (req, res) => {
     const session = await stripe.checkout.sessions.create({
       line_items: req.body.cart.map((item) => {
         return {
-          price: item.price,
+          price: item.id,
           quantity: item.quantity,
         };
       }),
       mode: "payment",
       allow_promotion_codes: true,
-      success_url: `http://localhost:5173/confirmation`,
+      success_url: `http://localhost:5173/confirmation?session_id={CHECKOUT_SESSION_ID}`, // Använd platsmarkör för session_id
       customer: userData.user.stripeCustomerId,
     });
 

@@ -12,7 +12,7 @@ POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
-  "email": "amanda@testar.com",
+  "email": "Kalle@outlook.com",
   "password": "1234"
 }
 
@@ -33,3 +33,10 @@ GET http://localhost:3000/api/products
 
 ###
 POST http://localhost:3000/auth/logout
+
+####
+GET http://localhost:3000/api/get-orders/cus_OfKhG3gOtuEw7m
+
+
+###
+GET http://localhost:3000/api/get-orders

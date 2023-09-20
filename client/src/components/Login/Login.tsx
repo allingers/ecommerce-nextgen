@@ -25,7 +25,7 @@ const Login: React.FC<LoginProps> = () => {
   
       if (response.ok) {
         login(email, password);
-        navigate('/min-sida');
+        navigate('/');
       } else {
         const data = await response.text(); 
         alert(data);

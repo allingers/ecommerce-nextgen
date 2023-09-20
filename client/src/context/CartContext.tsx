@@ -26,7 +26,6 @@ interface CartProviderProps {
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const [cart, setCart] = useState<Product[]>([]);
 
-
   useEffect(() => {
     const savedCart = localStorage.getItem('cart');
     if (savedCart) {
@@ -34,17 +33,16 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     }
   }, []);
 
- 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
   const addToCart = (product: Product) => {
-    const existingCartItem = cart.find((item) => item.price === product.price);
+    const existingCartItem = cart.find((item) => item.id === product.id);
 
     if (existingCartItem) {
       const updatedCart = cart.map((item) =>
-        item.price === product.price ? { ...item, quantity: item.quantity + 1 } : item
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
       );
       setCart(updatedCart);
     } else {
@@ -53,7 +51,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   };
 
   const removeFromCart = (productId: string) => {
-    setCart((prevCart) => prevCart.filter((product) => product.price !== productId));
+    setCart((prevCart) => prevCart.filter((product) => product.id !== productId));
   };
 
   const clearCart = () => {
@@ -61,7 +59,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   };
 
   const getTotalCost = () => {
-    return cart.reduce((total, product) => total + product.defaultPrice * product.quantity, 0);
+    return cart.reduce((total, product) => total + product.price * product.quantity, 0);
   };
 
   const contextValue: CartContextType = {

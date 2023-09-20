@@ -1,9 +1,10 @@
 import React, { createContext, useContext, ReactNode, useState, useEffect } from 'react';
 
 type User = {
-  id: string;
+  email: string;
   name: string;
-  // Lägg till andra användarattribut här
+  passwordHash: string;
+  stripeCustomerId: string;
 };
 
 type AuthContextType = {
