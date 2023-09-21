@@ -5,6 +5,7 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Poppins', sans-serif;
+    min-height: 75vh;
   }
   
   .cart h2 {

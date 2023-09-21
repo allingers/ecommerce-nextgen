@@ -8,24 +8,25 @@ import UserProfile from './components/UserProfile/UserProfile';
 import Confirmation from './pages/Confirmation';
 import Footer from './components/Footer/Footer';
 
-
 function App() {
   return (
     <Router>
-      <Menu />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/varukorg" element={<CartView />} />
-        <Route path="/min-sida" element={<UserProfile />} />
-        <Route path="/confirmation" element={<Confirmation />} />
-      </Routes>
-      <Footer />
+        <Menu />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/varukorg" element={<CartView />} />
+          <Route path="/min-sida" element={<UserProfile />} />
+          <Route path="/confirmation" element={<Confirmation />} />
+        </Routes>
+        <Footer />
     </Router>
   );
 }
 
 export default App;
+
+
 
 

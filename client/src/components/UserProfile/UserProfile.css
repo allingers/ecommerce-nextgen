@@ -6,6 +6,7 @@
   align-items: center;
   margin-top: 5rem;
   font-family: 'Poppins', sans-serif;
+  min-height: 70vh;
 }
 
 .user-profile button {
