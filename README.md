@@ -33,7 +33,7 @@ Projektet inkluderar funktioner som:
 
 - Visa en lista över produkter med bilder, namn och priser.
 - Lägg produkter i en varukorg och hantera varukorgen.
-- Genomföra en säker kassaprocess med betalningsintegration (stripe checkout).
+- Genomföra en säker kassaprocess med betalningsintegration. <br> (Info om giltiga testkort på Stripe --> https://stripe.com/docs/testing)
 - Visa orderhistorik för inloggade användare.
 - Hantera användarautentisering och användarprofiler.
 
