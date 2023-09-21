@@ -33,7 +33,6 @@ const getUsers = () => {
 
     req.session.user = { id: user.stripeCustomerId, authToken };
     res.cookie('authCookie', authToken, { httpOnly: false });
-    console.log(req.session.user)
 
     return res.status(200).json({ user: user});
     } catch (error) {

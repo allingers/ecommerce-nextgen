@@ -8,6 +8,7 @@ import UserProfile from './components/UserProfile/UserProfile';
 import Confirmation from './pages/Confirmation';
 import Footer from './components/Footer/Footer';
 
+
 function App() {
   return (
     <Router>
@@ -20,7 +21,7 @@ function App() {
         <Route path="/min-sida" element={<UserProfile />} />
         <Route path="/confirmation" element={<Confirmation />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </Router>
   );
 }
