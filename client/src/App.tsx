@@ -6,6 +6,7 @@ import Register from './components/Register/Register';
 import CartView from './components/Cart/CartView'; 
 import UserProfile from './components/UserProfile/UserProfile';
 import Confirmation from './pages/Confirmation';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/min-sida" element={<UserProfile />} />
         <Route path="/confirmation" element={<Confirmation />} />
       </Routes>
+      <Footer/>
     </Router>
   );
 }
