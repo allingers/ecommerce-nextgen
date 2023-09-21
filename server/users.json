@@ -10,5 +10,11 @@
     "email": "test@testar.com",
     "passwordHash": "$2b$10$rva9IRbIKLw3Vl88qbl6Puy1TXagrOx11EmD3D7t6tDkkgu2PpsOS",
     "stripeCustomerId": "cus_Og6b6br0yZGCk8"
+  },
+  {
+    "name": "Martin",
+    "email": "Martin@martin.com",
+    "passwordHash": "$2b$10$oVBiimnJUEOTq1bVHVwDYuut5jYUUQTiVNWzV6DNZxkoiHaFG.q0i",
+    "stripeCustomerId": "cus_Og7bVX11nUh1WX"
   }
 ]
