@@ -80,5 +80,29 @@
     ],
     "orderTotal": 129,
     "orderDate": "2023-09-20T11:47:34.788Z"
+  },
+  {
+    "id": "bbnea1o0kvk",
+    "customerId": "cus_OfKhG3gOtuEw7m",
+    "customerName": "Kalle",
+    "customerEmail": "Kalle@outlook.com",
+    "products": [
+      {
+        "product": "Oversized skräddarsydd blazer",
+        "quantity": 1,
+        "price": 799,
+        "totalPrice": 799,
+        "currency": "sek"
+      },
+      {
+        "product": "Ekologiskt jersey-hårband",
+        "quantity": 1,
+        "price": 129,
+        "totalPrice": 129,
+        "currency": "sek"
+      }
+    ],
+    "orderTotal": 928,
+    "orderDate": "2023-09-20T15:43:14.421Z"
   }
 ]

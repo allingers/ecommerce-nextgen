@@ -66,7 +66,9 @@ const Cart: React.FC<CartProps> = ({ removeFromCart }) => {
                   {item.price * item.quantity} SEK
                 </span>
               </div>
+              <div className="deleteBtn">
               <button onClick={() => removeFromCart(item.id)}>Ta bort</button>
+              </div>
             </li>
           ))}
         </ul>

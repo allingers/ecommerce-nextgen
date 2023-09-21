@@ -1,4 +1,3 @@
-/* Login.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
@@ -23,7 +22,7 @@
   }
   
   .login-form {
-    width: 300px;
+    width: 400px;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(146, 146, 146, 0.1);
@@ -49,8 +48,8 @@
   }
   
   .login-button {
-    background-color: #b58ccc;
-    color: #fff;
+    background-color: #d2c0db;
+    color: #090909cd;
     padding: 10px 15px;
     border: none;
     border-radius: 3px;
@@ -59,6 +58,6 @@
   }
   
   .login-button:hover {
-    background-color: #d2c0db;
+    background-color: #dbcee1;
   }
   

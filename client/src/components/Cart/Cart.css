@@ -1,9 +1,10 @@
-/* CSS för att styla varukorgen */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 .cart {
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Poppins', sans-serif;
   }
   
   .cart h2 {

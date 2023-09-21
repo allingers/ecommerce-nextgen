@@ -1,4 +1,4 @@
-/* Register.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 .register-container {
     max-width: 400px;
@@ -8,10 +8,14 @@
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(146, 146, 146, 0.1);
+    font-family: 'Poppins', sans-serif;
   }
 
   .register-container h2{
     text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 500;
   }
   
   .register-form {
@@ -20,32 +24,37 @@
   }
   
   .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
   
   label {
     font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
   }
+
   
-  input {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    font-size: 16px;
   }
   
   .register-button {
-    background-color: #b58ccc;
-    color: #fff;
-    padding: 10px 20px;
+    background-color: #d2c0db;
+    color: #090909cd;
+    padding: 10px 15px;
     border: none;
     border-radius: 3px;
-    font-size: 18px;
     cursor: pointer;
+    font-weight: bold;
   }
   
   .register-button:hover {
-    background-color: #d2c0db;
+    background-color: #dbcee1;
   }
   
   .login-link {

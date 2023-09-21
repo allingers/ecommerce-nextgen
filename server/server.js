@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 dotenv = require('dotenv').config(); 
 const session = require('express-session');
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const secretKey = process.env.MY_SECRET_KEY;
 const app = express();
 
@@ -14,8 +13,8 @@ app.use(cookieParser());
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: '*', // Uppdatera med din frontend-adress
-  credentials: true, // Tillåt credentials (t.ex. cookies)
+  origin: '*', 
+  credentials: true, 
 }));
 
 app.use(

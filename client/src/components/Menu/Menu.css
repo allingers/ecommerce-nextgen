@@ -69,3 +69,31 @@
     font-weight: bold;
     display: none;
 }
+
+.discount-banner{
+    background-color: #e8dfdf;
+    text-align: center;
+    padding: .5rem;
+    overflow: hidden;
+}
+
+.discount-banner p  {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: marquee 20s linear infinite;
+}
+
+.discount-banner p > span {
+    letter-spacing: 3px;
+    font-weight: 600;
+
+}
+
+@keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
