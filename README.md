@@ -1,4 +1,4 @@
-# NextGen - E-handelsprojekt
+# E-handelsprojekt
 
 ## Innehållsförteckning
 * [Installation - Instruktioner](#installation)
