@@ -40,7 +40,7 @@ Projektet inkluderar funktioner som:
 
 ### Teknologier
 
-- Frontend: React, HTML, CSS
+- Frontend: React, Typescript, HTML, CSS
 - Backend: Node.js, Express
 - Stripe
 
