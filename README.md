@@ -1,4 +1,4 @@
-# E-handelsprojekt
+# E-handelsprojekt (Stripe Checkout)
 
 ## Innehållsförteckning
 * [Installation - Instruktioner](#installation)
