@@ -18,7 +18,7 @@ const ProductList: React.FC = () => {
     <div className="product-list">
       {products.map((product) => (
         <ProductCard
-          key={product.id} // Assuming product.id is the unique identifier
+          key={product.id} 
           product={product}
           addToCart={addToCart}
         />

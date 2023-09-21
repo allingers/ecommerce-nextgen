@@ -8,9 +8,6 @@ const app = express();
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
-
-
-// Middleware
 app.use(express.json());
 app.use(cors({
   origin: '*', 
@@ -25,7 +22,7 @@ app.use(
   })
 );
 
-// controllers
+
 const loginController = require('./controllers/loginController'); 
 const logoutController = require('./controllers/logoutController');
 const registerController = require('./controllers/registerController'); 
@@ -35,12 +32,11 @@ const productController = require('./controllers/productController');
 const stripeController = require('./controllers/stripeController')
 
 
-//Routes
 app.use('/api', productController);
-app.use('/api', loginController); //login
-app.use('/api', logoutController); //logout
-app.use('/api', registerController); //register
-app.use('/api', checkoutController ); //checkout
+app.use('/api', loginController); 
+app.use('/api', logoutController); 
+app.use('/api', registerController); 
+app.use('/api', checkoutController ); 
 app.use('/api', orderController);
 app.use('/api', stripeController)
 

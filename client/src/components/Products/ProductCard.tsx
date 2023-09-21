@@ -1,6 +1,7 @@
 import React from 'react';
-import "./Product.css";
 import { Product } from '../../types/types';
+
+import "./Product.css";
 
 interface ProductCardProps {
   product: Product;
@@ -12,9 +13,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, addToCart }) => {
 
   return (
     <div className="card">
-      <img className="productImg" src={image} alt={`Bild på ${name}`} />
+      <img className="productImg" src={image} />
       <div className="productInformation">
-        <h3>{name}</h3>
+      <h3 title={name}>{name}</h3>
         <p className="price">{price} SEK</p>
       </div>
       <div className="buyButton">

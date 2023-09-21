@@ -45,8 +45,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
         setAuthStatus({ isLoggedIn: true, user: userData, login, logout });
       } else {
-        const data = await response.text(); // Hämta textsvaret
-        alert(data); // Visa textsvaret som ett felmeddelande
+        const data = await response.text(); 
+        alert(data); 
       }
     } catch (error) {
       console.error('Inloggningsfel:', error);

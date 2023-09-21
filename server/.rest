@@ -1,3 +1,5 @@
+
+### Registrera ny användare
 POST http://localhost:3000/api/register
 Content-Type: application/json
 
@@ -6,8 +8,8 @@ Content-Type: application/json
   "email": "din@email.com",
   "password": "DittLosenord"
 }
-###
 
+### Logga in 
 POST http://localhost:3000/api/login
 Content-Type: application/json
 
@@ -16,7 +18,11 @@ Content-Type: application/json
   "password": "1234"
 }
 
-###
+### Logga ut användare
+POST http://localhost:3000/auth/logout
+
+
+### Checkout-session
 POST http://localhost:3000/api/create-checkout-session
 
 Content-Type: application/json
@@ -28,15 +34,12 @@ Content-Type: application/json
   }
 ]
 
-###
+### Hämta alla produkter
 GET http://localhost:3000/api/products
 
-###
-POST http://localhost:3000/auth/logout
 
-####
+#### Hämta order/ar för specifik användare
 GET http://localhost:3000/api/get-orders/cus_OfKhG3gOtuEw7m
 
-
-###
+### Hämta alla ordrar
 GET http://localhost:3000/api/get-orders

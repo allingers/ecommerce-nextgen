@@ -1,5 +1,3 @@
-/* UserProfile.css */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 .user-profile {
@@ -34,7 +32,7 @@
 .order-history {
     width: 100%;
     max-width: 800px;
-    margin: 2rem 0rem .5rem 0rem; /* Minskat mellanrum genom att ändra margin */
+    margin: 2rem 0rem .5rem 0rem; 
     background-color: #f2f2f2a4;
     box-shadow: 0 0 10px rgba(157, 157, 157, 0.264);
     border-radius: 5px;

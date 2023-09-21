@@ -1,6 +1,6 @@
 import React, { useState, FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext'; // Uppdatera sökvägen
+import { useAuth } from '../../context/AuthContext'; 
 import "./Login.css"
 
 interface LoginProps {}
@@ -9,7 +9,7 @@ const Login: React.FC<LoginProps> = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const navigate = useNavigate();
-  const { login } = useAuth(); // Använd den uppdaterade AuthContext för att hämta login-funktionen
+  const { login } = useAuth(); 
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();

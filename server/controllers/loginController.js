@@ -14,21 +14,15 @@ const getUsers = () => {
     }
   };
   
-  // POST /api/login
   router.post('/login', async (req, res) => {
     const { email, password } = req.body;
-    
-  
     try {
-      // Hämta användare från JSON-filen baserat på e-postadressen.
       const users = getUsers();
       const user = users.find((u) => u.email === email);
   
       if (!user) {
         return res.status(401).send('Användaren finns inte.');
       }
-  
-      // Jämför lösenordet med det hashade lösenordet i JSON-filen.
       const passwordMatch = await bcrypt.compare(password, user.passwordHash);
   
       if (!passwordMatch) {
@@ -37,18 +31,15 @@ const getUsers = () => {
 
       const authToken = uuid.v4();
 
- // Skapa en autentiseringscookie och skicka den till klienten.
- req.session.user = { id: user.stripeCustomerId, authToken };
- res.cookie('authCookie', authToken, { httpOnly: false });
- console.log(req.session.user)
+    req.session.user = { id: user.stripeCustomerId, authToken };
+    res.cookie('authCookie', authToken, { httpOnly: false });
+    console.log(req.session.user)
 
- return res.status(200).json({ user: user});
-} catch (error) {
- console.error(error);
- return res.status(500).json({ error: 'Inloggningen misslyckades.' });
+    return res.status(200).json({ user: user});
+    } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Inloggningen misslyckades.' });
     }
-  });
-
-
+    });
 
 module.exports = router;

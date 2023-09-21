@@ -30,7 +30,6 @@ const Register = () => {
         alert('Registreringen lyckades! Logga in för att fortsätta.');
         navigate('/login')
       } else {
-        // Något gick fel vid registreringen
         const data = await response.json();
         alert(data.error);
       }

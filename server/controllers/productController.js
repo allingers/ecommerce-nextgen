@@ -4,7 +4,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 router.get('/products', async (req, res) => {
   try {
-    const products = await stripe.products.list({ limit: 10 }); // Justera 'limit' efter dina behov
+    const products = await stripe.products.list({ limit: 10 }); 
 
     const productsWithPrices = await Promise.all(
       products.data.map(async (product) => {
@@ -14,7 +14,7 @@ router.get('/products', async (req, res) => {
           name: product.name,
           description: product.description,
           image: product.images[0] || null,
-          price: price.unit_amount / 100, // Dela med 100 för att få priset i rätt format
+          price: price.unit_amount / 100, 
           currency: price.currency,
         };
       })

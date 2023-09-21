@@ -49,14 +49,10 @@ router.post('/create-order', async (req, res) => {
         orderDate: new Date().toISOString()
       };
 
-      // Hämta befintliga ordrar
       const orders = getOrders();
-
-      // Lägg till den nya ordern
       orders.push(order);
-
-      // Spara de uppdaterade ordrarna i filen
       saveOrders(orders);
+
       res.status(201).json({ order });
     } else {
       res.status(400).json({ message: 'Betalningen är inte verifierad.' });
@@ -69,7 +65,6 @@ router.post('/create-order', async (req, res) => {
 
 router.get('/get-orders', (req, res) => {
     try {
-      // Hämta befintliga ordrar
       const orders = getOrders();
   
       res.status(200).json({ orders });
@@ -81,9 +76,8 @@ router.get('/get-orders', (req, res) => {
 
   router.get('/get-orders/:customerId', (req, res) => {
     const customerId = req.params.customerId;
-    const orders = getOrders(); // Hämta alla ordrar från din databas
+    const orders = getOrders(); 
     
-    // Filtrera ordrarna för den specifika användaren
     const userOrders = orders.filter((order) => order.customerId === customerId);
     res.status(200).json({ orders: userOrders });
     

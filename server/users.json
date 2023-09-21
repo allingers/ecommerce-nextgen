@@ -1,11 +1,5 @@
 [
   {
-    "name": "Amanda",
-    "email": "amanda@testar.com",
-    "passwordHash": "$2b$10$FyhxbtlDkB3h/rP8F3RZYuto.7XM7/O8XNdgWTPsGiWTGbji.PPH.",
-    "stripeCustomerId": "cus_OewskBanY0uAfI"
-  },
-  {
     "name": "Kalle",
     "email": "Kalle@outlook.com",
     "passwordHash": "$2b$10$CzY.QLaaJVFATaKFAwpCb.wB3R27F40xuQkqn.A5/B9T9jBgHIImC",

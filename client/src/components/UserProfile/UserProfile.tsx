@@ -32,7 +32,6 @@ const UserProfile: React.FC = () => {
     }
   };
 
-  // Hämta userData från localStorage
   const userDataJson = localStorage.getItem('userData');
   const userData: UserData | null = userDataJson ? JSON.parse(userDataJson) : null;
 
