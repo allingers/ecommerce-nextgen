@@ -44,6 +44,4 @@ Projektet inkluderar funktioner som:
 - Backend: Node.js, Express
 - Stripe
 
-#### GitHub Repo:
- https://github.com/allingers/nextgen
 
